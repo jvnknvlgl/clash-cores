@@ -1,9 +1,10 @@
--- |
---   Copyright   :  (C) 2024, QBayLogic B.V.
---   License     :  BSD2 (see the file LICENSE)
---   Maintainer  :  QBayLogic B.V. <devops@qbaylogic.com>
---
---   8b/10b encoding and decoding tests
+{- |
+ Copyright   :  (C) 2024, QBayLogic B.V.
+ License     :  BSD2 (see the file LICENSE)
+ Maintainer  :  QBayLogic B.V. <devops@qbaylogic.com>
+
+ 8b/10b encoding and decoding tests
+-}
 module Test.Cores.LineCoding.Lc8b10b where
 
 import Clash.Cores.LineCoding.Lc8b10b
