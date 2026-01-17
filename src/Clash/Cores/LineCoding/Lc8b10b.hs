@@ -95,15 +95,16 @@ encode8b10b rd sym = out
 
 decode8b10bSCT ::
   Bool ->
-  BitVector 10 ->
+  (Bool, BitVector 10) ->
   (Bool, (Bool, Symbol8b10b))
-decode8b10bSCT rd cg = (rdNew, (rdNew, sym))
+decode8b10bSCT rd (rdUpd, cg) = (rdNew, (rdNew, sym))
   where
-    (rdNew, sym) = decode8b10b rd cg
+    (rdNew, sym) = decode8b10b rd' cg
+    rd' = if rd == rdUpd then rd else rdUpd
 
 decode8b10bSC ::
   (HiddenClockResetEnable dom) =>
-  Signal dom (BitVector 10) ->
+  Signal dom (Bool, BitVector 10) ->
   Signal dom (Bool, Symbol8b10b)
 decode8b10bSC = mealy decode8b10bSCT False
 

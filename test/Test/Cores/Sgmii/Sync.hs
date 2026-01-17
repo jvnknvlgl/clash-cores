@@ -55,7 +55,7 @@ prop_syncPropagateDw = H.property $ do
           (Range.singleton simDuration)
           (Gen.filter checkBitSequence genDefinedBitVector)
       )
-  let delaySamples = 4
+  let delaySamples = 3
 
       simOut =
         map f $
